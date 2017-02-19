@@ -15,3 +15,6 @@
 * Assign a value to the form equal to *this.state.term* and an onChange handler, *onInputChange*.
 * Set the state in *onInputChange* with *this.setState* so that the *event.target.value* is assigned to *term* and the component state gets updated when the input changes.
 * The *this* object of *onInputChange* has to be binded to the *this* context of the class in the conctructor.
+
+## 003 Handling form submissions
+* On form submit the page is reset from the backend. To avoid that, set the onSubmit handler *onFormSubmit* to *preventDefault*.
