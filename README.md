@@ -18,3 +18,7 @@
 
 ## 003 Handling form submissions
 * On form submit the page is reset from the backend. To avoid that, set the onSubmit handler *onFormSubmit* to *preventDefault*.
+
+## 004 Openweather API and redux-promise
+* Register in *openweathermap.org* and sign in. Get an API key and assign it to the *API_KEY* value in *src/actions/index.js*.
+* Install the *redux-promise* package. Import *ReduxPromise* in *src/index.js* and add it as an argument in *applyMiddleware*.
