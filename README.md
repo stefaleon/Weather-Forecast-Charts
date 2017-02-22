@@ -22,3 +22,10 @@
 ## 004 Openweather API and redux-promise
 * Register in *openweathermap.org* and sign in. Get an API key and assign it to the *API_KEY* value in *src/actions/index.js*.
 * Install the *redux-promise* package. Import *ReduxPromise* in *src/index.js* and add it as an argument in *applyMiddleware*.
+
+## 005 Create a fetching weather action with axios
+* Inside *src/actions/index.js* create the *fetchWeather* action creator. It returns an action object containing a *type* property with the value *FETCH_WEATHER*.
+* Create the request URL for the openweathermap API data. Thre *ROOT_URL* consists of the API web address and the *API_KEY*.
+* A *city* argument is required in the *fetchWeather* function call. It is used to create the final request url.
+* Install the *axios* package in order to make the simple AJAX request and import it inside *src/actions/index.js*. Use *axios.get* to create the *request* promise.
+* Pass the *request* as a value to the action's *payload* property.
