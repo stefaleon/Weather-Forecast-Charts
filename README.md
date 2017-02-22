@@ -29,3 +29,10 @@
 * A *city* argument is required in the *fetchWeather* function call. It is used to create the final request url.
 * Install the *axios* package in order to make the simple AJAX request and import it inside *src/actions/index.js*. Use *axios.get* to create the *request* promise.
 * Pass the *request* as a value to the action's *payload* property.
+
+## 006 Connect the *fetchWeather* action creator to the *SearchBar* container
+* Inside *src/containers/search_bar.js* import the *connect* method from *'react-redux'*.
+* Import the *bindActionCreators* property from *'redux'*.
+* Import the *fetchWeather* action creator from *'../actions/index'*.
+* Define the *mapDispatchToProps* function which binds the *fetchWeather* action creator to the *dispatch* function via *bindActionCreators*.
+* Export by default the *SearchBar* state container after the connection between it and the dispatched action has been established via *connect*.
