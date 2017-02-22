@@ -36,3 +36,8 @@
 * Import the *fetchWeather* action creator from *'../actions/index'*.
 * Define the *mapDispatchToProps* function which binds the *fetchWeather* action creator to the *dispatch* function via *bindActionCreators*.
 * Export by default the *SearchBar* state container after the connection between it and the dispatched action has been established via *connect*.
+
+## 007 Call *fetchWeather*
+* Now *this.props.fetchWeather* can be accessed inside *SearchBar*. Call it inside *onFormSubmit* with *this.state.term* as a city argument.
+* After the search is initiated, clear the search input by setting the *term* state to an empty string.
+* The *this* object of *onFormSubmit* has to be binded to the *this* context of the class in the conctructor.
