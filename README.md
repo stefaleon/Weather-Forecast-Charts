@@ -41,3 +41,10 @@
 * Now *this.props.fetchWeather* can be accessed inside *SearchBar*. Call it inside *onFormSubmit* with *this.state.term* as a city argument.
 * After the search is initiated, clear the search input by setting the *term* state to an empty string.
 * The *this* object of *onFormSubmit* has to be binded to the *this* context of the class in the conctructor.
+
+## 008 Create the *WeatherReducer*
+* Inside *src/reducers* create the file *reducer_weather.js*.
+* Assign the reducer's default state to *null*. Console log the action for initial testing.
+In the console we can see the default initialization actions dispatched by Redux.
+* In *src/reducers/index.js* import *WeatherReducer* from *'./reducer_weather'* and add the *weather: WeatherReducer* assignment for the *weather* part of state inside the *combineReducers* argument object.
+* Add a console log inside the action creator as well in order to log the request.
