@@ -48,3 +48,13 @@
 In the console we can see the default initialization actions dispatched by Redux.
 * In *src/reducers/index.js* import *WeatherReducer* from *'./reducer_weather'* and add the *weather: WeatherReducer* assignment for the *weather* part of state inside the *combineReducers* argument object.
 * Add a console log inside the action creator as well in order to log the request.
+
+## 009 The effect of the *ReduxPromise* middleware
+* Now, when a city name is entered in the form input, in the console we can see from the action creator log that the request is a promise. From the reducer log we can see that the received action already contains the requested weather data. The *request* promise is being returned on the *payload* key of the received action object and inside the *payload* object, a *data* object exists and contains all the requested API data, such as *city*, *coord* and a *list* array of weather data containing objects.
+* This is due to the *ReduxPromise* in *applyMiddleware*, which is monitoring the actions which have a promise status. The *request* promise returned by axios, passed to the *payload* action property, causes the *ReduxPromise* middleware to stop the action and await for the response to the request. When the response is received, the middleware dispatches a new action of the same *FETCH_WEATHER* type, which now contains the *payload* of the resolved request, i.e. the weather data.  
+
+## 010 Configure the *WeatherReducer*
+* We will be rendering weather data for a few cities, so a list structure will be used.
+* Inside *src/reducers/reducer_weather*, set the initial state to an empty array instead of null.
+* Import the *FETCH_WEATHER* constant from *'../actions/index'* and add the *FETCH_WEATHER* action type switch case.
+* While adding weather states for different cities in the list structure, we must be careful to avoid mutating the state object. A new state instance has to be created instead, for every new city entered in the input form. So *concat* could be used instead of *push* while adding state objects in the existing state array. Another option is to use ES6 syntax and the spread operator along with the *action.payload.data* object which contains the weather data of interest.
