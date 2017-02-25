@@ -58,3 +58,12 @@ In the console we can see the default initialization actions dispatched by Redux
 * Inside *src/reducers/reducer_weather*, set the initial state to an empty array instead of null.
 * Import the *FETCH_WEATHER* constant from *'../actions/index'* and add the *FETCH_WEATHER* action type switch case.
 * While adding weather states for different cities in the list structure, we must be careful to avoid mutating the state object. A new state instance has to be created instead, for every new city entered in the input form. So *concat* could be used instead of *push* while adding state objects in the existing state array. Another option is to use ES6 syntax and the spread operator along with the *action.payload.data* object which contains the weather data of interest.
+
+## 011 Create the *WeatherList* container
+* Inside *src/containers* create the *weather_list.js* file.
+* Import *React* and the *Component* property.
+* The *WeatherList* class renders a Bootstrap styled table. Add headers for the city and for weather data.
+* In *src/components/app.js* import *WeatherList* from *'../containers/weather_list'* and display it by inserting the relative tag in the *App* class.
+* Inside *src/containers/weather_list.js* import the *connect* method from *'react-redux'*.
+* Map the weather state to the *WeatherList* props with *mapStateToProps*.
+* Export by default the *WeatherList* container after the connection between it and *mapStateToProps* has been established via *connect*.
