@@ -67,3 +67,9 @@ In the console we can see the default initialization actions dispatched by Redux
 * Inside *src/containers/weather_list.js* import the *connect* method from *'react-redux'*.
 * Map the weather state to the *WeatherList* props with *mapStateToProps*.
 * Export by default the *WeatherList* container after the connection between it and *mapStateToProps* has been established via *connect*.
+
+## 012 Map props to a render helper
+* Now inside *WeatherList* we have access to *this.props.weather*, which contains an array of objects, one object per each city that is entered in the form input.
+* We will use the map function on the data of this array and the argument function will be the rendering helper *renderWeather(cityData)*.
+* To start with,  *renderWeather(cityData)* returns the city name, which due to the response format is *cityData.city.name*.
+* The *cityData.city.id* value is used as key in order to stop the *"Each child in an array or iterator should have a unique "key" prop"* warning.
