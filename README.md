@@ -73,3 +73,8 @@ In the console we can see the default initialization actions dispatched by Redux
 * We will use the map function on the data of this array and the argument function will be the rendering helper *renderWeather(cityData)*.
 * To start with,  *renderWeather(cityData)* returns the city name, which due to the response format is *cityData.city.name*.
 * The *cityData.city.id* value is used as key in order to stop the *"Each child in an array or iterator should have a unique "key" prop"* warning.
+
+## 013 Pull the weather data from the response object
+* The data we are interested in are contained inside the *cityData.list* array. We will use the map function and return those required for the application.
+* By setting the mapping function argument to *weather*, the required data which are the three arrays *temps*, *humidities* and *pressures* can be mapped out by returning *weather.main.temp*, *weather.main.humidity* and *weather.main.pressure* equivalently.
+* Console log these arrays to test that they are pulled out correcty.
