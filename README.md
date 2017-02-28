@@ -78,3 +78,9 @@ In the console we can see the default initialization actions dispatched by Redux
 * The data we are interested in are contained inside the *cityData.list* array. We will use the map function and return those required for the application.
 * By setting the mapping function argument to *weather*, the required data which are the three arrays *temps*, *humidities* and *pressures* can be mapped out by returning *weather.main.temp*, *weather.main.humidity* and *weather.main.pressure* equivalently.
 * Console log these arrays to test that they are pulled out correcty.
+
+## 014 Present the data with *Sparkline* charts
+* Install the *react-sparklines* package in order to present the weather data in chart format.
+* Import the *Sparklines* and *SparklinesLine* properties from *'react-sparklines'*.
+* In the *renderWeather* helper return, add a row containing the *Sparklines* tag with the *temps* array data drawn in a red line chart with *SparklinesLine*.
+* In order to keep the code DRY, a chart component will be created before the *humidities* and *pressures* are set to be displayed.
