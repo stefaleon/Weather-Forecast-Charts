@@ -84,3 +84,12 @@ In the console we can see the default initialization actions dispatched by Redux
 * Import the *Sparklines* and *SparklinesLine* properties from *'react-sparklines'*.
 * In the *renderWeather* helper return, add a row containing the *Sparklines* tag with the *temps* array data drawn in a red line chart with *SparklinesLine*.
 * In order to keep the code DRY, a chart component will be created before the *humidities* and *pressures* are set to be displayed.
+
+## 015 Add the chart component
+* Inside *src/components* create the file *chart.js*.
+* Import the *Sparklines* and *SparklinesLine* properties from *'react-sparklines'*.
+* In the chart component, the *temps*, *humidities* and *pressures* will be passed as props from the parent, which is the *WeatherList* container. Hence the data for the *Sparklines* tag are set to *props.data*.
+* The chart color will be also be passed as *props.color*.
+* Now the chart component exports a div tag containing the *Sparkline* chart.
+* In *src/containers/weather_list.js* import *Chart* from *'../components/chart'*.
+* Add the *Chart* tags in the *renderWeather* helper return, passing the data props *temps*, *humidities* and *pressures* and the color props "red", "green" and "blue".
