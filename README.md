@@ -100,3 +100,10 @@ In the console we can see the default initialization actions dispatched by Redux
 * The API provides temperature in Kelvin units. We will convert to Celsius, using *_.map* in
 *src/containers/weather_list.js*.
 * In the *Chart* tags rendered in *src/containers/weather_list.js*, another props will be passed in order to present the units, *°C* for temperature, *hPa* for pressure and *%* for humidity.
+
+## 017 Show the city in google-maps
+* Add some styling in *src/style/style.css*.
+* Inside *src/components* create the file *google_map.js*.
+* Use the *react-google-maps* package and the Google-maps-API to present a map instead of the city name.
+* Pass the *cityData.city.coord* *lat* and *lon* as props to *GoogleMap* to define the required *lat* and *lng* parameters for the map's *defaultCenter*.
+* In *src/style/style.css* hardcode the map dimensions in order for it to be presented.
