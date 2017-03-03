@@ -93,3 +93,10 @@ In the console we can see the default initialization actions dispatched by Redux
 * Now the chart component exports a div tag containing the *Sparkline* chart.
 * In *src/containers/weather_list.js* import *Chart* from *'../components/chart'*.
 * Add the *Chart* tags in the *renderWeather* helper return, passing the data props *temps*, *humidities* and *pressures* and the color props "red", "green" and "blue".
+
+## 016 Add more info in the chart display
+* Inside *src/components/chart.js* import the *SparklinesReferenceLine* property from *'react-sparklines'*. Add the relevant tab in order to display the mean value of the supplied data.
+* We will also display the average value as a number under each chart. Create the *average* helper function which calculates it. Use the lodash *round* and *add* functions to help with the calculations.
+* The API provides temperature in Kelvin units. We will convert to Celsius, using *_.map* in
+*src/containers/weather_list.js*.
+* In the *Chart* tags rendered in *src/containers/weather_list.js*, another props will be passed in order to present the units, *°C* for temperature, *hPa* for pressure and *%* for humidity.
